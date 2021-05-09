@@ -1,17 +1,21 @@
+import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Components/Home";
 import Splash from "./Components/Splash";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
 import Product from "./Components/Product";
 import Cart from "./Components/Cart";
 import NotFound from "./Components/NotFound";
 import "./App.css";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="App">
+      {loaded && <NavBar />}
       <Switch>
         <Route exact path="/">
-          <Splash />
+          {!loaded && <Splash setLoaded={setLoaded} />}
         </Route>
         <Route exact path="/home">
           <Home />
