@@ -2,7 +2,7 @@ import "./Checkout.css";
 
 function Checkout() {
   return (
-    <div className="cart__outer__shell">
+    <div className="checkout__outer__shell">
       <div>Hello from Checkout!</div>
     </div>
   );

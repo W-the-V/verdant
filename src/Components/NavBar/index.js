@@ -3,7 +3,7 @@ import * as Clicks from "../../Tools/Clicks";
 import NavMenu from "../NavMenu";
 import "./NavBar.css";
 
-function NavBar({ history }) {
+function NavBar({ history, showCart, setShowCart }) {
   return (
     <>
       <div className="nav_bar__outer__shell">
@@ -14,7 +14,11 @@ function NavBar({ history }) {
           <Button aria-controls="simple-menu" aria-haspopup="true">
             Categories
           </Button>
-          <Button aria-controls="simple-menu" aria-haspopup="true">
+          <Button
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={() => Clicks.cartClick(showCart, setShowCart)}
+          >
             Cart
           </Button>
           <Button

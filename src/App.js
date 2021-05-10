@@ -19,21 +19,38 @@ function App() {
           <Splash history={history} />
         </Route>
         <Route exact path="/home">
-          <NavBar history={history} />
+          <NavBar
+            history={history}
+            showCart={showCart}
+            setShowCart={setShowCart}
+          />
           <Cart showCart={showCart} setShowCart={setShowCart} />
           <Home />
         </Route>
         <Route path={`/product`}>
-          <NavBar history={history} />
+          <NavBar
+            history={history}
+            showCart={showCart}
+            setShowCart={setShowCart}
+          />
           <Cart showCart={showCart} setShowCart={setShowCart} />
           <Product />
         </Route>
         <Route exact path="/checkout">
-          <NavBar history={history} />
+          <NavBar
+            history={history}
+            showCart={showCart}
+            setShowCart={setShowCart}
+          />
+          <Cart showCart={showCart} setShowCart={setShowCart} />
           <Checkout />
         </Route>
         <Route>
-          <NavBar history={history} />
+          <NavBar
+            history={history}
+            showCart={showCart}
+            setShowCart={setShowCart}
+          />
           <Cart showCart={showCart} setShowCart={setShowCart} />
           <NotFound />
         </Route>
