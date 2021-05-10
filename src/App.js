@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Splash from "./Components/Splash";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
@@ -9,24 +9,27 @@ import NotFound from "./Components/NotFound";
 import "./App.css";
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
+  let history = useHistory();
   return (
     <div className="App">
-      {loaded && <NavBar />}
       <Switch>
         <Route exact path="/">
-          {!loaded && <Splash setLoaded={setLoaded} />}
+          <Splash history={history} />
         </Route>
         <Route exact path="/home">
+          <NavBar />
           <Home />
         </Route>
         <Route path={`/product`}>
+          <NavBar />
           <Product />
         </Route>
         <Route exact path="/cart">
+          <NavBar />
           <Cart />
         </Route>
         <Route>
+          <NavBar />
           <NotFound />
         </Route>
       </Switch>
