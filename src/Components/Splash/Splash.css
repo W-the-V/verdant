@@ -64,6 +64,7 @@
 .splash__sub_header {
   margin: 0;
   width: 29vw;
+  margin-bottom: 0.5vw;
 }
 .splash__header {
   font-weight: bold;
@@ -73,11 +74,11 @@
 }
 .splash__subtext__header {
   font-weight: bold;
-  font-size: 0.6em;
+  font-size: 1em;
 }
 .splash__subtext {
   font-style: italic;
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 .fa-arrow-right {
   color: white;

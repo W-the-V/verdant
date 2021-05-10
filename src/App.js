@@ -4,12 +4,14 @@ import Splash from "./Components/Splash";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import Product from "./Components/Product";
-import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 import NotFound from "./Components/NotFound";
+import Cart from "./Components/Cart";
 import "./App.css";
 
 function App() {
   let history = useHistory();
+  const [showCart, setShowCart] = useState(false);
   return (
     <div className="App">
       <Switch>
@@ -17,19 +19,22 @@ function App() {
           <Splash history={history} />
         </Route>
         <Route exact path="/home">
-          <NavBar />
+          <NavBar history={history} />
+          <Cart showCart={showCart} setShowCart={setShowCart} />
           <Home />
         </Route>
         <Route path={`/product`}>
-          <NavBar />
+          <NavBar history={history} />
+          <Cart showCart={showCart} setShowCart={setShowCart} />
           <Product />
         </Route>
-        <Route exact path="/cart">
-          <NavBar />
-          <Cart />
+        <Route exact path="/checkout">
+          <NavBar history={history} />
+          <Checkout />
         </Route>
         <Route>
-          <NavBar />
+          <NavBar history={history} />
+          <Cart showCart={showCart} setShowCart={setShowCart} />
           <NotFound />
         </Route>
       </Switch>
